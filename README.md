@@ -9,20 +9,23 @@ under domain shift scenarios.
   * **WFDB == 1.2.2**
 
 ## Task
-
 Classify ECG heartbeats into 5 classes: N, S, V, F, Q
+
+## Dataset
+Download [MIT-BIH Arrhythmia Database (MITDB) ](https://www.physionet.org/content/mitdb/1.0.0/) <br>
+Download [MIT-BIH Supraventricular Arrhythmia Database (SVDB)](https://www.physionet.org/content/svdb/1.0.0/)
 
 
 ## Usage
+```
+(1) Cut the continuous ECG signals into heartbeat segments:
+python data_process_for_MIAT.py
 
-# (1) Download data
-Download [MIT-BIH Arrhythmia Database (MITDB) ](https://www.physionet.org/content/mitdb/1.0.0/)
-Download [MIT-BIH Supraventricular Arrhythmia Database (SVDB)](https://www.physionet.org/content/svdb/1.0.0/)
+(2) train and evaluation task DS1->DS2:
+python MIAT_train_eval.py --run_id=0 --gpu=0 --epochs=150 --lr=0.001 --weight=0.005 --n=5 --lambda=1 --alpha=2 --prevat=1 --mix=1 --vat=1 --s=DS1 --t=DS2
 
-# (2) preprocess to get npy
-python preprocess.py
+(3) train and evaluation task MITDB->SVDB:
+python MIAT_train_eval.py --run_id=0 --gpu=0 --epochs=150 --lr=0.001 --weight=0.005 --n=1 --lambda=5 --alpha=1 --prevat=1 --mix=1 --vat=1 --s=mitdb --t=svdb
 
-# (3) train
-python test_mitdb.py
-
+```
 
