@@ -1,6 +1,5 @@
 ## Mixup Asymmetric Tri-training for Heartbeat Classification Under Domain Shift <br>
-In this paper, we propose a novel Mixup Asymmetric Tri-training (MIAT) method to improve the generalization ability of heartbeat classifiers
-under domain shift scenarios.
+In this paper, we present MIAT, a novel UDA-based method for heartbeat classification aims to reduce the domain shift issue by integrating [asymmetric tri-training](https://arxiv.org/abs/1702.08400) and three kinds of [mixup](https://arxiv.org/abs/1710.09412) regularizations. 
 
 ## Main requirements
 
@@ -25,7 +24,7 @@ python data_process_for_MIAT.py
 python MIAT_train_eval.py --run_id=0 --gpu=0 --epochs=150 --lr=0.001 --weight=0.005 --n=5 --lambda=1 --alpha=2 --prevat=1 --mix=1 --vat=1 --s=DS1 --t=DS2
 
 (3) train and evaluation task MITDB->SVDB:
-python MIAT_train_eval.py --run_id=0 --gpu=0 --epochs=150 --lr=0.001 --weight=0.005 --n=1 --lambda=5 --alpha=1 --prevat=1 --mix=1 --vat=1 --s=mitdb --t=svdb
+python MIAT_train_eval.py --run_id=5 --gpu=2 --epochs=150 --lr=0.001 --weight=0.005 --n=1 --lambda=5 --alpha=1 --prevat=1 --mix=1 --vat=1 --s=mitdb --t=svdb
 
 ```
 
