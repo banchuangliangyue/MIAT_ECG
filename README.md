@@ -4,9 +4,9 @@ under domain shift scenarios.
 
 ## Main requirements
 
-  * **torch == 1.0.0**
+  * **Torch == 1.0.0**
   * **Python == 3.5**
-  * **wfdb == 1.2.2**
+  * **WFDB == 1.2.2**
 
 ## Task
 
