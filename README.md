@@ -14,9 +14,9 @@ Classify ECG heartbeats into 5 classes: N, S, V, F, Q
 
 
 ## Usage
-```
+
 # (1) Download data
-Download [MIT-BIH Arrhythmia Database (MITDB)](https://www.physionet.org/content/mitdb/1.0.0/)
+Download [MIT-BIH Arrhythmia Database (MITDB) ](https://www.physionet.org/content/mitdb/1.0.0/)
 Download [MIT-BIH Supraventricular Arrhythmia Database (SVDB)](https://www.physionet.org/content/svdb/1.0.0/)
 
 # (2) preprocess to get npy
@@ -25,5 +25,4 @@ python preprocess.py
 # (3) train
 python test_mitdb.py
 
-```
 
